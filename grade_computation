@@ -1,0 +1,42 @@
+def compute_grade(quizzes, requirements, long_exam, class_standing):
+ 
+    w_quiz = 0.25
+    w_req = 0.25
+    w_exam = 0.30
+    w_cs = 0.20
+
+  
+    final_grade = (
+        quizzes * w_quiz +
+        requirements * w_req +
+        long_exam * w_exam +
+        class_standing * w_cs
+    )
+
+    return final_grade
+
+
+
+print("Enter your grades (0-100):")
+quiz = float(input("Quizzes: "))
+req = float(input("Requirements: "))
+exam = float(input("Long Exam: "))
+cs = float(input("Class Standing: "))
+
+
+grade = compute_grade(quiz, req, exam, cs)
+
+
+print(f"\nFinal Grade: {grade:.2f}")
+
+
+if grade >= 90:
+    print("Rating: Excellent")
+elif grade >= 85:
+    print("Rating: Very Good")
+elif grade >= 80:
+    print("Rating: Good")
+elif grade >= 75:
+    print("Rating: Passed")
+else:
+    print("Rating: Failed")
