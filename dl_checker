@@ -1,0 +1,17 @@
+
+def check_directors_list(gwa, subjects):
+    # Check for failing grades (4.00 or 5.00)
+    has_failure = any(grade >= 4.00 for grade, units in subjects.values())
+
+    if gwa <= 1.50 and not has_failure:
+        return "Qualified for Director's List"
+    elif gwa <= 1.50 and has_failure:
+        return "GWA is qualified but has failing grade (Not eligible)"
+    else:
+        return "Not qualified for Director's List"
+
+
+result = check_directors_list(gwa, subjects)
+
+print("\n=== DIRECTOR'S LIST STATUS ===")
+print(result)
